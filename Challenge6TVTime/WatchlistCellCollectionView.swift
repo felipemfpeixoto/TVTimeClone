@@ -9,6 +9,10 @@ import UIKit
 
 class WatchlistCellCollectionView: UICollectionViewCell {
 
+    @IBOutlet weak var watchedPosterImage: UIImageView!
+    
+    @IBOutlet weak var watchedButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

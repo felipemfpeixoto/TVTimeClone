@@ -9,6 +9,17 @@ import UIKit
 
 class YourShowsCellTableView: UITableViewCell {
 
+    
+    @IBOutlet weak var showsImage: UIImageView!
+    
+    @IBOutlet weak var seasonAndEpisodeLabel: UILabel!
+    
+    @IBOutlet weak var titleEpisodeLabel: UILabel!
+
+    @IBOutlet weak var moreInformationButton: UIButton!
+    
+    @IBOutlet weak var watchedEpisodeButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
