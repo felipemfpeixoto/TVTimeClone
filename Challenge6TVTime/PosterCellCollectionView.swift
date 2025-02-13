@@ -7,15 +7,15 @@
 
 import UIKit
 
-class PosterCellCollectionView: UICollectionViewCell {
-    
-    @IBOutlet weak var addShowButton: UIButton!
-    
-    @IBOutlet weak var addPosterImage: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-}
+//class PosterCellCollectionView: UICollectionViewCell {
+//    
+//    @IBOutlet weak var addShowButton: UIButton!
+//    
+//    @IBOutlet weak var addPosterImage: UIImageView!
+//    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+//
+//}
