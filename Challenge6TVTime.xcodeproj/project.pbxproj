@@ -10,28 +10,10 @@
 		1B9E36642D53FC5200398CFD /* Challenge6TVTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge6TVTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1B9E36762D53FC5300398CFD /* Exceptions for "Challenge6TVTime" folder in "Challenge6TVTime" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 1B9E36632D53FC5200398CFD /* Challenge6TVTime */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1B9E36662D53FC5200398CFD /* Challenge6TVTime */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				1B9E36762D53FC5300398CFD /* Exceptions for "Challenge6TVTime" folder in "Challenge6TVTime" target */,
-			);
 			path = Challenge6TVTime;
-			sourceTree = "<group>";
-		};
-		3508FC5D2D5FBE6700D4C39D /* Model */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -50,7 +32,6 @@
 		1B9E365B2D53FC5200398CFD = {
 			isa = PBXGroup;
 			children = (
-				3508FC5D2D5FBE6700D4C39D /* Model */,
 				1B9E36662D53FC5200398CFD /* Challenge6TVTime */,
 				1B9E36652D53FC5200398CFD /* Products */,
 			);
@@ -81,7 +62,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1B9E36662D53FC5200398CFD /* Challenge6TVTime */,
-				3508FC5D2D5FBE6700D4C39D /* Model */,
 			);
 			name = Challenge6TVTime;
 			packageProductDependencies = (
