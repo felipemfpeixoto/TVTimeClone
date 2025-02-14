@@ -10,6 +10,7 @@ import UIKit
 class WatchListViewCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var buttonWatched: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     static let identifier: String = "WatchListViewCell"
     
