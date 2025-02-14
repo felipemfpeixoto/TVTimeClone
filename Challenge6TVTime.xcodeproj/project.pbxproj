@@ -29,6 +29,11 @@
 			path = Challenge6TVTime;
 			sourceTree = "<group>";
 		};
+		3508FC5D2D5FBE6700D4C39D /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 		1B9E365B2D53FC5200398CFD = {
 			isa = PBXGroup;
 			children = (
+				3508FC5D2D5FBE6700D4C39D /* Model */,
 				1B9E36662D53FC5200398CFD /* Challenge6TVTime */,
 				1B9E36652D53FC5200398CFD /* Products */,
 			);
@@ -75,6 +81,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1B9E36662D53FC5200398CFD /* Challenge6TVTime */,
+				3508FC5D2D5FBE6700D4C39D /* Model */,
 			);
 			name = Challenge6TVTime;
 			packageProductDependencies = (
