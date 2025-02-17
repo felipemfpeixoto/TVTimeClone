@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+class Welcome: Codable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
@@ -11,14 +11,42 @@ struct Welcome: Codable {
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
+    
+//    init(page: Int, totalPages: Int, totalResults: Int) {
+//        self.page = page
+//        self.totalPages = totalPages
+//        self.totalResults = totalResults
+//    }
+}
+
+extension Welcome {
+    static func loadFromBundle() -> Welcome? {
+        guard let url = Bundle.main.url(forResource: "data", withExtension: "json") else {
+            print("Erro: Arquivo data.json não encontrado no bundle.")
+            return nil
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let welcome = try decoder.decode(Welcome.self, from: data)
+            return welcome
+        } catch {
+            print("Erro ao carregar e decodificar data.json: \(error)")
+            return nil
+        }
+    }
 }
 
 // MARK: - Result
 struct Result: Codable {
+    
+    static private let imageUrlPrefix = "https://image.tmdb.org/t/p/w500"
+    
     let backdropPath: String
     let id: Int
     let name, originalName, overview, posterPath: String
-    let mediaType: MediaType
+    let mediaType: String
     let adult: Bool
     let originalLanguage: String
     let genreIDS: [Int]
@@ -44,8 +72,12 @@ struct Result: Codable {
         case voteCount = "vote_count"
         case originCountry = "origin_country"
     }
+    
+    private func fullImagePath(for image:String?)->URL? {
+        guard let image = image,
+              let url = URL(string: Self.imageUrlPrefix+image) else {return nil}
+        return url
+    }
 }
 
-enum MediaType: String, Codable {
-    case tv = "tv"
-}
+

@@ -19,12 +19,23 @@ class WatchListViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configure(with string: String) {
-//        watchedPosterImage.image = UIImage(named: string)
-        backgroundColor = .blue
-        print(string)
-        imageView.image = UIImage(systemName: "photo")
-//        watchedPosterImage.image = UIImage(systemName: "photo.artframe")
+    func configure(with item: Result) {
+        
+        self.imageView.image = UIImage(systemName: "photo")
+        
+        Task {
+            @MainActor in
+            do {
+                self.imageView.image = try await TMDBService.requestImage(from: item.posterPath)
+                print("Pegou a imagem")
+            } catch {
+                self.imageView.image = UIImage(systemName: "photo")
+                print("Não Pegou a imagem")
+            }
+        }
+        
+        self.imageView.contentMode = .scaleAspectFill
+        self.layer.cornerRadius = 8
     }
     
     // MARK: Function called to register the cell to the collection view

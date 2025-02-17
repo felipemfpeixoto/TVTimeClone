@@ -1,26 +1,24 @@
 //
-//  ViewController.swift
+//  ChooseWatchlistView.swift
 //  Challenge6TVTime
 //
-//  Created by Ana Zacour on 05/02/25.
+//  Created by Ana Zacour on 11/02/25.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ChooseWatchlistViewController: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet var SelectShows: UIView!
-    
-    @IBOutlet weak var posterCollectionView: UICollectionView!
     
     var results:[Result] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        collectionView.register(PosterCellCollectionView.nib(), forCellWithReuseIdentifier: PosterCellCollectionView.identifier)
+        collectionView.register(WatchListViewCell.nib(), forCellWithReuseIdentifier: WatchListViewCell.identifier)
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -31,7 +29,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension ChooseWatchlistViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
@@ -41,14 +39,14 @@ extension ViewController: UICollectionViewDelegate {
     
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension ChooseWatchlistViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCellCollectionView.identifier, for: indexPath) as! PosterCellCollectionView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WatchListViewCell.identifier, for: indexPath) as! WatchListViewCell
         
         cell.configure(with: results[indexPath.row])
         
@@ -58,7 +56,7 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 // MARK: Lets us determine what is the margin and padding between each cell
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension ChooseWatchlistViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 112, height: 189)

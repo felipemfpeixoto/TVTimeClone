@@ -10,9 +10,22 @@
 		1B9E36642D53FC5200398CFD /* Challenge6TVTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge6TVTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3508FC642D5FC1A600D4C39D /* Exceptions for "Challenge6TVTime" folder in "Challenge6TVTime" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1B9E36632D53FC5200398CFD /* Challenge6TVTime */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1B9E36662D53FC5200398CFD /* Challenge6TVTime */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3508FC642D5FC1A600D4C39D /* Exceptions for "Challenge6TVTime" folder in "Challenge6TVTime" target */,
+			);
 			path = Challenge6TVTime;
 			sourceTree = "<group>";
 		};
