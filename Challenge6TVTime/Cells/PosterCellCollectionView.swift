@@ -9,29 +9,51 @@ import UIKit
 
 class PosterCellCollectionView: UICollectionViewCell {
     
+    var tvShow: TVShow?
+    
     @IBOutlet weak var addShowButton: UIButton!
     
     @IBOutlet weak var addPosterImage: UIImageView!
     
     static let identifier: String = "PosterCellCollectionView"
     
+    
+    @IBAction func clickedButton(_ sender: Any) {
+        print("Clicou")
+        
+        if TVShowsManager.shared.watchedTvShow.contains(where: { $0.id == self.tvShow!.id }) {
+            print("Deu red")
+            TVShowsManager.shared.removeWatched(self.tvShow!)
+            
+            let configuration = UIImage.SymbolConfiguration(scale: .small)
+            
+            self.addShowButton.setImage(UIImage(systemName: "plus", withConfiguration: configuration), for: .normal)
+            
+        } else {
+            print("Deu add")
+            TVShowsManager.shared.addWatched(self.tvShow!)
+            let configuration = UIImage.SymbolConfiguration(scale: .small)
+            self.addShowButton.setImage(UIImage(systemName: "minus", withConfiguration: configuration), for: .normal)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configure(with item: Result) {
+    func configure(with item: TVShow) {
         
         self.addPosterImage.image = UIImage(systemName: "photo")
+        
+        self.tvShow = item
         
         Task {
             @MainActor in
             do {
                 self.addPosterImage.image = try await TMDBService.requestImage(from: item.posterPath)
-                print("Pegou a imagem")
             } catch {
                 self.addPosterImage.image = UIImage(systemName: "photo")
-                print("Não Pegou a imagem")
             }
         }
         

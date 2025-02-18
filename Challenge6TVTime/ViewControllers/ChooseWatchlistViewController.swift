@@ -13,10 +13,19 @@ class ChooseWatchlistViewController: UIViewController {
     
     @IBOutlet var SelectShows: UIView!
     
-    var results:[Result] = []
+    var results:[TVShow] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        do {
+            let _ = try TVShowsManager.load()
+            performSegue(withIdentifier: "ToolBar", sender: nil)
+        } catch {
+            print("Ainda não criou a watchlist")
+        }
+        
         // Do any additional setup after loading the view.
         collectionView.register(WatchListViewCell.nib(), forCellWithReuseIdentifier: WatchListViewCell.identifier)
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -24,8 +33,10 @@ class ChooseWatchlistViewController: UIViewController {
         collectionView.dataSource = self
         
         let welcome = Welcome.loadFromBundle()
-        results = welcome?.results ?? []
-        print("Results: \(results.count)")
+        
+        let filteredResults = welcome?.results.filter { TVShowsManager.shared.watchedTvShow.contains($0) == false }
+        
+        results = filteredResults ?? []
     }
 }
 
@@ -36,13 +47,12 @@ extension ChooseWatchlistViewController: UICollectionViewDelegate {
         
         print("Fui selecionado \(indexPath.row)")
     }
-    
 }
 
 extension ChooseWatchlistViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 20 - TVShowsManager.shared.watchedTvShow.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

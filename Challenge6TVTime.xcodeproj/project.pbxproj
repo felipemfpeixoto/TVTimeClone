@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3532779A2D650663000B1966 /* CodableExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 353277992D650663000B1966 /* CodableExtensions */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1B9E36642D53FC5200398CFD /* Challenge6TVTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge6TVTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3532779A2D650663000B1966 /* CodableExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = Challenge6TVTime;
 			packageProductDependencies = (
+				353277992D650663000B1966 /* CodableExtensions */,
 			);
 			productName = Challenge6TVTime;
 			productReference = 1B9E36642D53FC5200398CFD /* Challenge6TVTime.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 1B9E365B2D53FC5200398CFD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				353277982D650663000B1966 /* XCRemoteSwiftPackageReference "CodableExtensions" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1B9E36652D53FC5200398CFD /* Products */;
 			projectDirPath = "";
@@ -335,6 +344,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		353277982D650663000B1966 /* XCRemoteSwiftPackageReference "CodableExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rvenieris/CodableExtensions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		353277992D650663000B1966 /* CodableExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353277982D650663000B1966 /* XCRemoteSwiftPackageReference "CodableExtensions" */;
+			productName = CodableExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B9E365C2D53FC5200398CFD /* Project object */;
 }

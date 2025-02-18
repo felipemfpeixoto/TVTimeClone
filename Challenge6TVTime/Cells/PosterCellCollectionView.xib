@@ -30,6 +30,9 @@
                         <buttonConfiguration key="configuration" style="tinted">
                             <imageReference key="image" image="plus" catalog="system" symbolScale="small"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="clickedButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="AZy-rE-yVl"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

@@ -84,39 +84,44 @@
         <!--Shows-->
         <scene sceneID="Lqy-8I-L82">
             <objects>
-                <viewController id="he5-ZO-ryY" customClass="ShowsView" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="he5-ZO-ryY" customClass="ShowsViewController" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kdy-5k-0Ta">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-Qa-WnQ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <rect key="frame" x="16" y="103" width="361" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VuU-TB-ecJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VuU-TB-ecJ" firstAttribute="trailing" secondItem="Ncr-Qa-WnQ" secondAttribute="trailing" id="lhN-jJ-FXH"/>
+                            <constraint firstItem="VuU-TB-ecJ" firstAttribute="trailing" secondItem="Ncr-Qa-WnQ" secondAttribute="trailing" constant="16" id="lhN-jJ-FXH"/>
                             <constraint firstAttribute="bottom" secondItem="Ncr-Qa-WnQ" secondAttribute="bottom" id="rHe-Ek-PC2"/>
                             <constraint firstItem="Ncr-Qa-WnQ" firstAttribute="top" secondItem="VuU-TB-ecJ" secondAttribute="top" id="wu2-BZ-FKv"/>
-                            <constraint firstItem="Ncr-Qa-WnQ" firstAttribute="leading" secondItem="VuU-TB-ecJ" secondAttribute="leading" id="xNG-j9-cUN"/>
+                            <constraint firstItem="Ncr-Qa-WnQ" firstAttribute="leading" secondItem="VuU-TB-ecJ" secondAttribute="leading" constant="16" id="xNG-j9-cUN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shows" id="z67-6Y-gjX">
                         <imageReference key="image" image="play.tv" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="qnA-hY-hgB"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ncr-Qa-WnQ" id="rG2-Yl-PjD"/>
+                        <segue destination="4V7-M3-q2c" kind="presentation" identifier="showDetailSegue" id="iQN-2u-kWH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ku3-yw-Ivf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249.6183206106871" y="34.507042253521128"/>
+            <point key="canvasLocation" x="1277" y="-3"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PLa-0N-PWV">
             <objects>
                 <tabBarController id="tUh-2n-ENn" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="6Qj-Hh-fcb"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6Qj-Hh-fcb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UEX-3o-P4u">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -138,17 +143,17 @@
             <objects>
                 <viewController id="4V7-M3-q2c" customClass="DescriptionShowsView" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htP-7q-2A7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T2V-sa-0sP">
-                                <rect key="frame" x="18" y="74" width="357" height="357"/>
+                                <rect key="frame" x="18" y="15" width="357" height="357"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="T2V-sa-0sP" secondAttribute="height" multiplier="1:1" id="ipS-cI-mRe"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB0-Bz-ng3">
-                                <rect key="frame" x="18" y="524.66666666666663" width="74" height="35"/>
+                                <rect key="frame" x="18" y="465.66666666666669" width="74" height="35"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
@@ -157,25 +162,25 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="􀋭 Not Watched" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-lG-ogs">
-                                <rect key="frame" x="18" y="466.66666666666669" width="123" height="21"/>
+                                <rect key="frame" x="18" y="407.66666666666669" width="123" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where to watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTX-YO-MqN">
-                                <rect key="frame" x="18" y="495.66666666666669" width="120" height="21.000000000000057"/>
+                                <rect key="frame" x="18" y="436.66666666666669" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seasons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-n0-ouh">
-                                <rect key="frame" x="18" y="437.66666666666669" width="80" height="21"/>
+                                <rect key="frame" x="18" y="378.66666666666669" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsJ-wh-dwO">
-                                <rect key="frame" x="336" y="431" width="39" height="34"/>
+                                <rect key="frame" x="336" y="372" width="39" height="34"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
@@ -183,14 +188,14 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K18-Cx-V8m">
-                                <rect key="frame" x="18" y="567.66666666666663" width="360" height="81.333333333333371"/>
+                                <rect key="frame" x="18" y="508.66666666666669" width="360" height="81.333333333333314"/>
                                 <string key="text">On his way home from a friend's house, young Will sees something terrifying. Nearby, a sinister secret lurks in the depths of a government lab.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="􀋃􀋃􀋃􀋃􀋄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jq-zn-2gf">
-                                <rect key="frame" x="130" y="437.66666666666669" width="94" height="21"/>
+                                <rect key="frame" x="130" y="378.66666666666669" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -221,10 +226,11 @@
                             <constraint firstItem="e2W-lG-ogs" firstAttribute="top" secondItem="Bwe-n0-ouh" secondAttribute="bottom" constant="8" id="wYi-gY-OP6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kT2-xX-ZYK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziF-Om-5k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248.0916030534352" y="-633.80281690140851"/>
+            <point key="canvasLocation" x="2155" y="-655"/>
         </scene>
         <!--Discover-->
         <scene sceneID="Poe-Px-9F6">
@@ -397,10 +403,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NGk-H2-38E">
-                                        <rect key="frame" x="0.0" y="138" width="128" height="127.99999999999997"/>
+                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lnr-uJ-40b">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="127.99999999999997"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>

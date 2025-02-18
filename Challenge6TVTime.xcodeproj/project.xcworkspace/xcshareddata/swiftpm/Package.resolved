@@ -1,0 +1,15 @@
+{
+  "originHash" : "039ecadae37050edb34c365f9f35841390934446fd2bcf65450c9c656d656e52",
+  "pins" : [
+    {
+      "identity" : "codableextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rvenieris/CodableExtensions",
+      "state" : {
+        "revision" : "e671737b81ffe39c17523f0caac73e93cce36927",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

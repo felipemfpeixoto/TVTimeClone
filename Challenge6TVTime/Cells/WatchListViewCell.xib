@@ -29,6 +29,9 @@
                         <buttonConfiguration key="configuration" style="tinted">
                             <imageReference key="image" image="eye" catalog="system" symbolScale="small"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="clickedButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Jjr-8v-4Y4"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

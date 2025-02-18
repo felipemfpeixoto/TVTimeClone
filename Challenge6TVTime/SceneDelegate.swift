@@ -45,6 +45,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
+        // MARK: Salvando o TCShowManager ao entrar em background
+        do {
+            try TVShowsManager.shared.save()
+        } catch {
+            print("Erro ao salvar o TVShowManager: \(error.localizedDescription)")
+        }
     }
 
 

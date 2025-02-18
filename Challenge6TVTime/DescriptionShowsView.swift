@@ -8,6 +8,8 @@
 import UIKit
 
 class DescriptionShowsView: UIViewController {
+    
+    var tvShow: TVShow?
 
     @IBOutlet var SelectShows: UIView!
     override func viewDidLoad() {

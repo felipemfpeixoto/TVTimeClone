@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Welcome
 class Welcome: Codable {
     let page: Int
-    let results: [Result]
+    let results: [TVShow]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -39,7 +39,7 @@ extension Welcome {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct TVShow: Codable, Equatable {
     
     static private let imageUrlPrefix = "https://image.tmdb.org/t/p/w500"
     
@@ -77,6 +77,10 @@ struct Result: Codable {
         guard let image = image,
               let url = URL(string: Self.imageUrlPrefix+image) else {return nil}
         return url
+    }
+    
+    static func ==(lhs: TVShow, rhs: TVShow) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CodableExtensions
 
 class ViewController: UIViewController {
     
@@ -15,11 +16,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
-    var results:[Result] = []
+    var results:[TVShow] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        do {
+            let _ = try TVShowsManager.load()
+            performSegue(withIdentifier: "CreateWatchlist", sender: nil)
+        } catch {
+            print("Ainda não criou a watchlist")
+        }
+        
         collectionView.register(PosterCellCollectionView.nib(), forCellWithReuseIdentifier: PosterCellCollectionView.identifier)
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.delegate = self
