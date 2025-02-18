@@ -52,7 +52,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Next"/>
                                 <connections>
-                                    <segue destination="tUh-2n-ENn" kind="show" identifier="ToolBar" id="P9F-yW-n7V"/>
+                                    <segue destination="tUh-2n-ENn" kind="show" identifier="ToolBar" animates="NO" id="P9F-yW-n7V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="424" y="723"/>
         </scene>
-        <!--Description Shows View-->
+        <!--Description Shows View Controller-->
         <scene sceneID="KNc-Z9-p8K">
             <objects>
-                <viewController id="4V7-M3-q2c" customClass="DescriptionShowsView" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4V7-M3-q2c" customClass="DescriptionShowsViewController" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htP-7q-2A7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,12 +211,14 @@
                             <constraint firstItem="T2V-sa-0sP" firstAttribute="leading" secondItem="sDN-aL-teQ" secondAttribute="leading" constant="18" id="9Fj-gy-dVs"/>
                             <constraint firstItem="QsJ-wh-dwO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Jq-zn-2gf" secondAttribute="trailing" constant="8" id="EXa-Po-mq7"/>
                             <constraint firstItem="Bwe-n0-ouh" firstAttribute="firstBaseline" secondItem="8Jq-zn-2gf" secondAttribute="firstBaseline" id="EeU-sN-F1K"/>
+                            <constraint firstItem="sDN-aL-teQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SB0-Bz-ng3" secondAttribute="trailing" symbolic="YES" id="GQg-tR-waG"/>
                             <constraint firstItem="K18-Cx-V8m" firstAttribute="top" secondItem="SB0-Bz-ng3" secondAttribute="bottom" constant="8" symbolic="YES" id="JOK-ry-Jf2"/>
                             <constraint firstItem="T2V-sa-0sP" firstAttribute="top" secondItem="sDN-aL-teQ" secondAttribute="top" constant="15" id="JwB-eJ-NZc"/>
                             <constraint firstItem="sDN-aL-teQ" firstAttribute="trailing" secondItem="K18-Cx-V8m" secondAttribute="trailing" constant="15" id="Men-Dv-haB"/>
                             <constraint firstItem="K18-Cx-V8m" firstAttribute="leading" secondItem="SB0-Bz-ng3" secondAttribute="leading" id="Njs-7M-HLT"/>
                             <constraint firstItem="8Jq-zn-2gf" firstAttribute="firstBaseline" secondItem="QsJ-wh-dwO" secondAttribute="firstBaseline" id="PMe-Qu-3RY"/>
                             <constraint firstItem="SB0-Bz-ng3" firstAttribute="leading" secondItem="dTX-YO-MqN" secondAttribute="leading" id="Pn5-8W-Igw"/>
+                            <constraint firstItem="sDN-aL-teQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dTX-YO-MqN" secondAttribute="trailing" symbolic="YES" id="QbG-YC-9rt"/>
                             <constraint firstItem="dTX-YO-MqN" firstAttribute="leading" secondItem="e2W-lG-ogs" secondAttribute="leading" id="TK7-GY-pEU"/>
                             <constraint firstItem="sDN-aL-teQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e2W-lG-ogs" secondAttribute="trailing" constant="8" id="cDo-82-h2q"/>
                             <constraint firstItem="8Jq-zn-2gf" firstAttribute="leading" secondItem="Bwe-n0-ouh" secondAttribute="trailing" constant="32" id="kk8-hJ-lhD"/>
@@ -227,6 +229,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kT2-xX-ZYK"/>
+                    <connections>
+                        <outlet property="imageView" destination="T2V-sa-0sP" id="SHp-ME-46E"/>
+                        <outlet property="showDescription" destination="K18-Cx-V8m" id="bgN-ii-mW4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziF-Om-5k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -403,10 +409,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NGk-H2-38E">
-                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="138" width="128" height="127.99999999999997"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lnr-uJ-40b">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="127.99999999999997"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>

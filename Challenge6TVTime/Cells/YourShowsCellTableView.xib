@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourShowsCellTableView" rowHeight="100" id="KGk-i7-Jjw" customClass="YourShowsCellTableView" customModule="Challenge6TVTime" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourShowsCellTableView" rowHeight="193" id="KGk-i7-Jjw" customClass="YourShowsCellTableView" customModule="Challenge6TVTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="411" height="173"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="411" height="173"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrp-gi-kkC">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                        <rect key="frame" x="0.0" y="8" width="120" height="157"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="8JQ-QU-K8i"/>
                         </constraints>
@@ -60,9 +60,9 @@
                     <constraint firstItem="OoD-Ty-D66" firstAttribute="top" secondItem="8V1-Sy-qbx" secondAttribute="bottom" constant="8" id="GLZ-ht-2XC"/>
                     <constraint firstAttribute="trailing" secondItem="VRX-R4-04h" secondAttribute="trailing" constant="8" id="a29-vU-qSb"/>
                     <constraint firstItem="8V1-Sy-qbx" firstAttribute="leading" secondItem="jrp-gi-kkC" secondAttribute="trailing" constant="8" id="a9F-Uq-Hfp"/>
-                    <constraint firstAttribute="bottom" secondItem="jrp-gi-kkC" secondAttribute="bottom" id="lyP-UT-Yzq"/>
+                    <constraint firstAttribute="bottom" secondItem="jrp-gi-kkC" secondAttribute="bottom" constant="8" id="lyP-UT-Yzq"/>
                     <constraint firstAttribute="bottom" secondItem="VRX-R4-04h" secondAttribute="bottom" constant="8" id="ncm-Em-f0t"/>
-                    <constraint firstItem="jrp-gi-kkC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tKZ-ke-Mi7"/>
+                    <constraint firstItem="jrp-gi-kkC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="tKZ-ke-Mi7"/>
                     <constraint firstItem="jrp-gi-kkC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vJu-Rv-rGO"/>
                     <constraint firstAttribute="trailing" secondItem="9Zq-gk-auy" secondAttribute="trailing" constant="8" id="wW3-cl-jBE"/>
                     <constraint firstItem="9Zq-gk-auy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wnr-0A-6JL"/>
@@ -76,7 +76,7 @@
                 <outlet property="titleEpisodeLabel" destination="OoD-Ty-D66" id="rvr-Xi-XqS"/>
                 <outlet property="watchedEpisodeButton" destination="VRX-R4-04h" id="Fvv-Ru-Lfj"/>
             </connections>
-            <point key="canvasLocation" x="77.862595419847324" y="44.366197183098592"/>
+            <point key="canvasLocation" x="147.32824427480915" y="77.112676056338032"/>
         </tableViewCell>
     </objects>
     <resources>

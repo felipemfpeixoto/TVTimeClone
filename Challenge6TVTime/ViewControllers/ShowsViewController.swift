@@ -20,9 +20,18 @@ class ShowsViewController: UIViewController {
         
         tableView.register(YourShowsCellTableView.nib(), forCellReuseIdentifier: YourShowsCellTableView.identifier)
         
+        
         tableView.dataSource = self
         tableView.delegate = self
         
+        navigationController?.navigationBar.isHidden = true
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        self.tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 32, right: 0)
+        tableView.contentInsetAdjustmentBehavior = .never
     }
 }
 
@@ -36,12 +45,15 @@ extension ShowsViewController: UITableViewDataSource {
         
         cell.configure(with: shows[indexPath.row])
         
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
 }
 
 extension ShowsViewController: UITableViewDelegate {
@@ -50,14 +62,15 @@ extension ShowsViewController: UITableViewDelegate {
         
         print("Selecionou: \(shows[indexPath.row].name)")
         
-        performSegue(withIdentifier: "showDetailSegue", sender: self)
+        performSegue(withIdentifier: "showDetailSegue", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-        
-        let destinationViewController = segue.destination as! DescriptionShowsView
-        destinationViewController.tvShow = shows[selectedIndexPath.row]
+        if segue.identifier == "showDetailSegue",
+            let destinationViewController = segue.destination as? DescriptionShowsViewController,
+            let indexPath = sender as? IndexPath {
+                destinationViewController.tvShow = shows[indexPath.row]
+            }
     }
 }
 

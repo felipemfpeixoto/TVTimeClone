@@ -49,7 +49,7 @@ class YourShowsCellTableView: UITableViewCell {
             }
         }
         
-        self.showsImage.contentMode = .scaleAspectFill
+        self.showsImage.contentMode = .scaleAspectFit
     }
     
     // MARK: Function called to register the cell to the collection view
