@@ -241,21 +241,20 @@
         <!--Discover-->
         <scene sceneID="Poe-Px-9F6">
             <objects>
-                <viewController id="ODt-ij-O3c" customClass="ExploreView" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ODt-ij-O3c" customClass="ExploreViewController" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2T-fM-fnA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgI-3a-hWw">
-                                <rect key="frame" x="7" y="66" width="378" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="TgI-3a-hWw">
+                                <rect key="frame" x="16" y="103" width="361" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="ODt-ij-O3c" id="zSF-JT-dh6"/>
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-GY-1EZ">
-                                <rect key="frame" x="0.0" y="148" width="405" height="704"/>
+                                <rect key="frame" x="16" y="175" width="361" height="594"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vjP-mb-QCa">
                                     <size key="itemSize" width="128" height="128"/>
@@ -265,10 +264,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ifj-Fi-mIQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bnH-et-aWX">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -278,15 +277,24 @@
                         <viewLayoutGuide key="safeArea" id="jrI-jz-GgH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fdy-GY-1EZ" firstAttribute="leading" secondItem="jrI-jz-GgH" secondAttribute="leading" id="5ye-go-t3Y"/>
-                            <constraint firstAttribute="bottom" secondItem="Fdy-GY-1EZ" secondAttribute="bottom" id="6O1-hT-B97"/>
-                            <constraint firstItem="Fdy-GY-1EZ" firstAttribute="trailing" secondItem="jrI-jz-GgH" secondAttribute="trailing" constant="12" id="Mok-6H-9rI"/>
-                            <constraint firstItem="Fdy-GY-1EZ" firstAttribute="top" secondItem="jrI-jz-GgH" secondAttribute="top" constant="45" id="RTw-0T-sZe"/>
+                            <constraint firstItem="Fdy-GY-1EZ" firstAttribute="leading" secondItem="jrI-jz-GgH" secondAttribute="leading" constant="16" id="5ye-go-t3Y"/>
+                            <constraint firstItem="jrI-jz-GgH" firstAttribute="bottom" secondItem="Fdy-GY-1EZ" secondAttribute="bottom" id="6O1-hT-B97"/>
+                            <constraint firstItem="jrI-jz-GgH" firstAttribute="trailing" secondItem="TgI-3a-hWw" secondAttribute="trailing" constant="16" id="EGH-xk-NtS"/>
+                            <constraint firstItem="Fdy-GY-1EZ" firstAttribute="trailing" secondItem="jrI-jz-GgH" secondAttribute="trailing" constant="-16" id="Mok-6H-9rI"/>
+                            <constraint firstItem="Fdy-GY-1EZ" firstAttribute="top" secondItem="TgI-3a-hWw" secondAttribute="bottom" constant="16" id="RTw-0T-sZe"/>
+                            <constraint firstItem="TgI-3a-hWw" firstAttribute="top" secondItem="jrI-jz-GgH" secondAttribute="top" id="hrG-FK-zO7"/>
+                            <constraint firstItem="TgI-3a-hWw" firstAttribute="centerX" secondItem="R2T-fM-fnA" secondAttribute="centerX" id="kqV-Ag-6wa"/>
+                            <constraint firstItem="TgI-3a-hWw" firstAttribute="leading" secondItem="jrI-jz-GgH" secondAttribute="leading" constant="16" id="yBm-CQ-vyt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" id="xm3-Kn-Iu0">
                         <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="SelectShows" destination="R2T-fM-fnA" id="ntO-BF-ENl"/>
+                        <outlet property="collectionView" destination="Fdy-GY-1EZ" id="406-mK-qsA"/>
+                        <outlet property="searchBar" destination="TgI-3a-hWw" id="Xl3-SA-e3l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5M-bo-qgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

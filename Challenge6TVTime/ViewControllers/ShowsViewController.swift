@@ -9,17 +9,15 @@ import UIKit
 
 class ShowsViewController: UIViewController {
 
-    
     @IBOutlet weak var tableView: UITableView!
     
-    var shows: [TVShow] = TVShowsManager.shared.watchedTvShow
+    var shows: [TVShow] = TVShowsManager.shared.planningTvShow
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         tableView.register(YourShowsCellTableView.nib(), forCellReuseIdentifier: YourShowsCellTableView.identifier)
-        
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -33,6 +31,15 @@ class ShowsViewController: UIViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 32, right: 0)
         tableView.contentInsetAdjustmentBehavior = .never
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("Chamou")
+        
+        self.shows = TVShowsManager.shared.planningTvShow
+        
+        tableView.reloadData()
+    }
 }
 
 extension ShowsViewController: UITableViewDataSource {
@@ -44,8 +51,6 @@ extension ShowsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: YourShowsCellTableView.identifier, for: indexPath) as! YourShowsCellTableView
         
         cell.configure(with: shows[indexPath.row])
-        
-        
         
         return cell
     }
