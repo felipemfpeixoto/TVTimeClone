@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="-44" y="-42"/>
         </scene>
-        <!--Shows-->
+        <!--Your Shows-->
         <scene sceneID="Lqy-8I-L82">
             <objects>
                 <viewController id="he5-ZO-ryY" customClass="ShowsViewController" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,26 +89,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eYZ-jw-4PU">
+                                <rect key="frame" x="16" y="404" width="361" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-Qa-WnQ">
-                                <rect key="frame" x="16" y="103" width="361" height="749"/>
+                                <rect key="frame" x="16" y="141.33333333333331" width="361" height="627.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-hI-YUk">
+                                <rect key="frame" x="16" y="103" width="170.66666666666666" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VuU-TB-ecJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dyf-hI-YUk" firstAttribute="leading" secondItem="VuU-TB-ecJ" secondAttribute="leading" constant="16" id="KG7-4s-4Qn"/>
+                            <constraint firstItem="dyf-hI-YUk" firstAttribute="top" secondItem="VuU-TB-ecJ" secondAttribute="top" id="MKt-ws-pe5"/>
                             <constraint firstItem="VuU-TB-ecJ" firstAttribute="trailing" secondItem="Ncr-Qa-WnQ" secondAttribute="trailing" constant="16" id="lhN-jJ-FXH"/>
-                            <constraint firstAttribute="bottom" secondItem="Ncr-Qa-WnQ" secondAttribute="bottom" id="rHe-Ek-PC2"/>
-                            <constraint firstItem="Ncr-Qa-WnQ" firstAttribute="top" secondItem="VuU-TB-ecJ" secondAttribute="top" id="wu2-BZ-FKv"/>
+                            <constraint firstItem="VuU-TB-ecJ" firstAttribute="bottom" secondItem="Ncr-Qa-WnQ" secondAttribute="bottom" id="rHe-Ek-PC2"/>
+                            <constraint firstItem="Ncr-Qa-WnQ" firstAttribute="top" secondItem="dyf-hI-YUk" secondAttribute="bottom" id="wu2-BZ-FKv"/>
                             <constraint firstItem="Ncr-Qa-WnQ" firstAttribute="leading" secondItem="VuU-TB-ecJ" secondAttribute="leading" constant="16" id="xNG-j9-cUN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shows" id="z67-6Y-gjX">
                         <imageReference key="image" image="play.tv" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="qnA-hY-hgB"/>
+                    <navigationItem key="navigationItem" title="Your Shows" id="J1X-aX-4q5"/>
                     <connections>
+                        <outlet property="navigationItem" destination="J1X-aX-4q5" id="6Km-kG-lNj"/>
+                        <outlet property="navigationTopItem" destination="J1X-aX-4q5" id="GWK-eF-9kO"/>
                         <outlet property="tableView" destination="Ncr-Qa-WnQ" id="rG2-Yl-PjD"/>
                         <segue destination="4V7-M3-q2c" kind="presentation" identifier="showDetailSegue" id="iQN-2u-kWH"/>
                     </connections>
@@ -303,7 +320,7 @@
         <!--Profile-->
         <scene sceneID="7Py-Dg-lfd">
             <objects>
-                <viewController id="Vnb-dC-Jdp" customClass="ProfileView" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vnb-dC-Jdp" customClass="ProfileViewController" customModule="Challenge6TVTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fmu-Ux-tX8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,7 +416,7 @@
                                 </buttonConfiguration>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rZ1-6U-7Ka">
-                                <rect key="frame" x="0.0" y="184.66666666666669" width="393" height="667.33333333333326"/>
+                                <rect key="frame" x="16" y="184.66666666666669" width="361" height="584.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A6b-d3-xVK">
                                     <size key="itemSize" width="128" height="128"/>
@@ -417,10 +434,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NGk-H2-38E">
-                                        <rect key="frame" x="0.0" y="138" width="128" height="127.99999999999997"/>
+                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lnr-uJ-40b">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="127.99999999999997"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -438,9 +455,9 @@
                         <viewLayoutGuide key="safeArea" id="wK7-rN-P0x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rZ1-6U-7Ka" secondAttribute="bottom" id="0VV-Oa-gM4"/>
+                            <constraint firstItem="wK7-rN-P0x" firstAttribute="bottom" secondItem="rZ1-6U-7Ka" secondAttribute="bottom" id="0VV-Oa-gM4"/>
                             <constraint firstItem="0Nh-tA-eku" firstAttribute="leading" secondItem="RVM-KO-60E" secondAttribute="trailing" constant="8" id="7ul-pT-QWP"/>
-                            <constraint firstItem="wK7-rN-P0x" firstAttribute="trailing" secondItem="rZ1-6U-7Ka" secondAttribute="trailing" id="9E3-p6-cCQ"/>
+                            <constraint firstItem="wK7-rN-P0x" firstAttribute="trailing" secondItem="rZ1-6U-7Ka" secondAttribute="trailing" constant="16" id="9E3-p6-cCQ"/>
                             <constraint firstItem="wK7-rN-P0x" firstAttribute="top" secondItem="0Nh-tA-eku" secondAttribute="top" constant="2" id="Giz-ds-z8T"/>
                             <constraint firstItem="wK7-rN-P0x" firstAttribute="trailing" secondItem="rWi-Uj-VFm" secondAttribute="trailing" constant="6.6666666666667425" id="Mhn-qF-x8t"/>
                             <constraint firstItem="rWi-Uj-VFm" firstAttribute="leading" secondItem="0Nh-tA-eku" secondAttribute="leading" id="UI4-jm-tgY"/>
@@ -448,7 +465,7 @@
                             <constraint firstItem="rWi-Uj-VFm" firstAttribute="top" secondItem="0Nh-tA-eku" secondAttribute="bottom" constant="19.666666666666671" id="gbq-oY-MFs"/>
                             <constraint firstItem="RVM-KO-60E" firstAttribute="top" secondItem="wK7-rN-P0x" secondAttribute="top" constant="1" id="r3C-A1-OjH"/>
                             <constraint firstItem="RVM-KO-60E" firstAttribute="leading" secondItem="wK7-rN-P0x" secondAttribute="leading" constant="20" id="rfI-Th-4c6"/>
-                            <constraint firstItem="rZ1-6U-7Ka" firstAttribute="leading" secondItem="wK7-rN-P0x" secondAttribute="leading" id="tNS-zP-zpJ"/>
+                            <constraint firstItem="rZ1-6U-7Ka" firstAttribute="leading" secondItem="wK7-rN-P0x" secondAttribute="leading" constant="16" id="tNS-zP-zpJ"/>
                             <constraint firstItem="wK7-rN-P0x" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0Nh-tA-eku" secondAttribute="trailing" constant="8" id="yA3-bg-fyR"/>
                         </constraints>
                     </view>
@@ -456,6 +473,9 @@
                         <imageReference key="image" image="person.circle" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="NSI-mb-6IB"/>
+                    <connections>
+                        <outlet property="collectionView" destination="rZ1-6U-7Ka" id="H0W-1e-r75"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFH-Dh-9uW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,7 @@ import UIKit
 
 class ShowsViewController: UIViewController {
 
+    @IBOutlet weak var navigationTopItem: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     
     var shows: [TVShow] = TVShowsManager.shared.planningTvShow
@@ -22,8 +23,11 @@ class ShowsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.navigationItem.hidesBackButton = true
         
+//        self.tabBarController?.viewControllers?[0].navigationItem.title = "Your Shows"
+//        self.navigationTopItem.title = "Your Shows"
+        self.navigationItem.title = "Your Shows"
     }
     
     override func viewDidLayoutSubviews() {
@@ -33,9 +37,6 @@ class ShowsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        print("Chamou")
-        
         self.shows = TVShowsManager.shared.planningTvShow
         
         tableView.reloadData()
@@ -58,6 +59,7 @@ extension ShowsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
     
 }
 
