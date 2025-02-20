@@ -12,8 +12,7 @@ class DescriptionShowsViewController: UIViewController {
     var tvShow: TVShow?
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet var SelectShows: UIView!
-    
+    @IBOutlet weak var seasonLabel: UILabel!
     @IBOutlet weak var showDescription: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
