@@ -39,9 +39,19 @@ class ProfileViewController: UIViewController {
         return UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
             switch sectionIndex {
             case 0:
-                return self.createHorizontalSection(groupWidth: 0.3, groupHeight: 189)
+                
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    return self.createHorizontalSection(groupWidth: 0.3, groupHeight: 400)
+                } else {
+                    return self.createHorizontalSection(groupWidth: 0.3, groupHeight: 189)
+                }
             case 1:
-                return self.createHorizontalSection(groupWidth: 0.3, groupHeight: 189)
+                
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    return self.createHorizontalSection(groupWidth: 0.3, groupHeight: 400)
+                } else {
+                    return self.createHorizontalSection(groupWidth: 0.3, groupHeight: 189)
+                }
             default:
                 return nil
             }
@@ -49,7 +59,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func createHorizontalSection(groupWidth: CGFloat, groupHeight: CGFloat) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .estimated(200))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(groupWidth), heightDimension: .estimated(groupHeight))
@@ -57,8 +67,8 @@ class ProfileViewController: UIViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-//        section.interGroupSpacing = 30  // Ajustável conforme necessário
-//        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(40))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
@@ -110,6 +120,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         
         cell.configure(with: usedArray[indexPath.row])
+        cell.backgroundColor = .red
         return cell
     }
     
@@ -133,12 +144,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         return header
     }
 }
-
-//extension ProfileViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 20, height: 50)
-//    }
-//}
 
 // MARK: - Cabeçalho da Seção
 class SectionHeaderView: UICollectionReusableView {

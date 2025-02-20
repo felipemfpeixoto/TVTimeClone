@@ -18,9 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="112" height="176"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8k-xZ-kZ4">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t8k-xZ-kZ4">
                         <rect key="frame" x="0.0" y="0.0" width="112" height="176"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGl-iZ-ask">
                         <rect key="frame" x="77" y="6" width="29" height="24"/>
@@ -37,6 +36,12 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="t8k-xZ-kZ4" secondAttribute="trailing" id="8eQ-aG-20B"/>
+                <constraint firstAttribute="bottom" secondItem="t8k-xZ-kZ4" secondAttribute="bottom" id="P6g-H8-EI8"/>
+                <constraint firstItem="t8k-xZ-kZ4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RJZ-5o-FJq"/>
+                <constraint firstItem="t8k-xZ-kZ4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lS7-Ga-TkO"/>
+            </constraints>
             <size key="customSize" width="112" height="176"/>
             <connections>
                 <outlet property="addPosterImage" destination="t8k-xZ-kZ4" id="WTW-UI-gku"/>
