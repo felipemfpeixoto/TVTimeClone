@@ -38,7 +38,6 @@ class YourShowsCellTableView: UITableViewCell {
         self.tvShow = item
         self.showsImage.image = UIImage(systemName: "photo")
         self.seasonAndEpisodeLabel.text = "S01 | E01"
-        self.titleEpisodeLabel.text = "Pilot"
         
         Task {
             @MainActor in
