@@ -24,10 +24,6 @@ class ShowsViewController: UIViewController {
         tableView.delegate = self
         
         self.tabBarController?.navigationItem.hidesBackButton = true
-        
-//        self.tabBarController?.viewControllers?[0].navigationItem.title = "Your Shows"
-//        self.navigationTopItem.title = "Your Shows"
-        self.navigationItem.title = "Your Shows"
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,6 +56,9 @@ extension ShowsViewController: UITableViewDataSource {
         return 150
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
     
 }
 
@@ -80,4 +79,3 @@ extension ShowsViewController: UITableViewDelegate {
             }
     }
 }
-

@@ -49,6 +49,9 @@ class YourShowsCellTableView: UITableViewCell {
             }
         }
         
+        self.backgroundColor = .systemGray5
+        self.layer.cornerRadius = 20
+        
         self.showsImage.contentMode = .scaleAspectFit
     }
     
