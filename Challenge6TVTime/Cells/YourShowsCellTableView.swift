@@ -23,10 +23,6 @@ class YourShowsCellTableView: UITableViewCell {
     
     @IBOutlet weak var seasonAndEpisodeLabel: UILabel!
     
-    @IBOutlet weak var titleEpisodeLabel: UILabel!
-
-    @IBOutlet weak var moreInformationButton: UIButton!
-    
     @IBOutlet weak var watchedEpisodeButton: UIButton!
     
     @IBOutlet weak var background: UIView!
@@ -45,7 +41,6 @@ class YourShowsCellTableView: UITableViewCell {
         self.tvShow = item
         self.showsImage.image = UIImage(systemName: "photo")
         self.seasonAndEpisodeLabel.text = tvShow?.name
-        self.titleEpisodeLabel.text = tvShow?.mediaType
         
         self.background.layer.cornerRadius = 20
         
