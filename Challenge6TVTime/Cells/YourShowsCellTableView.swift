@@ -7,13 +7,18 @@
 
 import UIKit
 
+protocol YourShowsCellTableViewDelegate: AnyObject {
+    func didTapButton(in cell: YourShowsCellTableView)
+}
+
 class YourShowsCellTableView: UITableViewCell {
     
     static let identifier = "YourShowsCellTableView"
     
+    weak var delegate: YourShowsCellTableViewDelegate?
+    
     var tvShow: TVShow?
 
-    
     @IBOutlet weak var showsImage: UIImageView!
     
     @IBOutlet weak var seasonAndEpisodeLabel: UILabel!
@@ -25,15 +30,16 @@ class YourShowsCellTableView: UITableViewCell {
     @IBOutlet weak var watchedEpisodeButton: UIButton!
     
     @IBOutlet weak var background: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        watchedEpisodeButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//        // Configure the view for the selected state
-//    }
+    
+    @objc private func buttonTapped() {
+        delegate?.didTapButton(in: self)
+    }
     
     func configure(with item: TVShow) {
         self.tvShow = item
@@ -62,5 +68,4 @@ class YourShowsCellTableView: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: Self.identifier, bundle: nil)
     }
-    
 }

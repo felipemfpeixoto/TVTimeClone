@@ -7,7 +7,25 @@
 
 import UIKit
 
-class ShowsViewController: UIViewController {
+class ShowsViewController: UIViewController, YourShowsCellTableViewDelegate {
+    func didTapButton(in cell: YourShowsCellTableView) {
+        print("chamou")
+        
+        let alert = UIAlertController(title: "Watched TV Show", message: "Are you sure you want do add \(cell.tvShow!.name) to your watched list?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
+            TVShowsManager.shared.removePlanned(cell.tvShow!)
+            TVShowsManager.shared.addWatched(cell.tvShow!)
+            
+            self.shows.remove(at: self.shows.firstIndex(of: cell.tvShow!)!)
+            self.tableView.reloadData()
+        }))
+        
+        present(alert, animated: true)
+    }
+    
 
     @IBOutlet weak var navigationTopItem: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
@@ -46,6 +64,7 @@ extension ShowsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: YourShowsCellTableView.identifier, for: indexPath) as! YourShowsCellTableView
         
         cell.configure(with: shows[indexPath.row])
+        cell.delegate = self
         
         return cell
     }
