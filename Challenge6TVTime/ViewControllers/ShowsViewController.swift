@@ -16,7 +16,6 @@ class ShowsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         tableView.register(YourShowsCellTableView.nib(), forCellReuseIdentifier: YourShowsCellTableView.identifier)
         
@@ -24,17 +23,16 @@ class ShowsViewController: UIViewController {
         tableView.delegate = self
         
         self.tabBarController?.navigationItem.hidesBackButton = true
+        
+        tableView.separatorStyle = .none // Remove linha padrão entre células
     }
     
     override func viewDidLayoutSubviews() {
-        
-        self.tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 32, right: 0)
         tableView.contentInsetAdjustmentBehavior = .never
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.shows = TVShowsManager.shared.planningTvShow
-        
         tableView.reloadData()
     }
 }
@@ -53,13 +51,12 @@ extension ShowsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 150 // Altura fixa da célula
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20 // Espaçamento fixo entre células
     }
-    
 }
 
 extension ShowsViewController: UITableViewDelegate {

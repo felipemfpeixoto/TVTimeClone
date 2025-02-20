@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func createHorizontalSection(groupWidth: CGFloat, groupHeight: CGFloat) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .estimated(200))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(groupWidth), heightDimension: .estimated(groupHeight))
@@ -57,8 +57,8 @@ class ProfileViewController: UIViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.interGroupSpacing = 10  // Ajustável conforme necessário
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+//        section.interGroupSpacing = 30  // Ajustável conforme necessário
+//        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(40))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
@@ -134,11 +134,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 }
 
-extension ProfileViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 112, height: 50)
-    }
-}
+//extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 20, height: 50)
+//    }
+//}
 
 // MARK: - Cabeçalho da Seção
 class SectionHeaderView: UICollectionReusableView {

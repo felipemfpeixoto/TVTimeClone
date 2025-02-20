@@ -24,6 +24,7 @@ class YourShowsCellTableView: UITableViewCell {
     
     @IBOutlet weak var watchedEpisodeButton: UIButton!
     
+    @IBOutlet weak var background: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,7 +38,10 @@ class YourShowsCellTableView: UITableViewCell {
     func configure(with item: TVShow) {
         self.tvShow = item
         self.showsImage.image = UIImage(systemName: "photo")
-        self.seasonAndEpisodeLabel.text = "S01 | E01"
+        self.seasonAndEpisodeLabel.text = tvShow?.name
+        self.titleEpisodeLabel.text = tvShow?.mediaType
+        
+        self.background.layer.cornerRadius = 20
         
         Task {
             @MainActor in
@@ -48,7 +52,7 @@ class YourShowsCellTableView: UITableViewCell {
             }
         }
         
-        self.backgroundColor = .systemGray5
+//        self.backgroundColor = .systemGray5
         self.layer.cornerRadius = 20
         
         self.showsImage.contentMode = .scaleAspectFit
