@@ -9,10 +9,10 @@ import UIKit
 
 class ShowsViewController: UIViewController {
 
-    
+    @IBOutlet weak var navigationTopItem: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     
-    var shows: [TVShow] = TVShowsManager.shared.watchedTvShow
+    var shows: [TVShow] = TVShowsManager.shared.planningTvShow
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +20,26 @@ class ShowsViewController: UIViewController {
         
         tableView.register(YourShowsCellTableView.nib(), forCellReuseIdentifier: YourShowsCellTableView.identifier)
         
-        
         tableView.dataSource = self
         tableView.delegate = self
         
-        navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.navigationItem.hidesBackButton = true
         
+//        self.tabBarController?.viewControllers?[0].navigationItem.title = "Your Shows"
+//        self.navigationTopItem.title = "Your Shows"
+        self.navigationItem.title = "Your Shows"
     }
     
     override func viewDidLayoutSubviews() {
         
         self.tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 32, right: 0)
         tableView.contentInsetAdjustmentBehavior = .never
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.shows = TVShowsManager.shared.planningTvShow
+        
+        tableView.reloadData()
     }
 }
 
@@ -45,14 +53,13 @@ extension ShowsViewController: UITableViewDataSource {
         
         cell.configure(with: shows[indexPath.row])
         
-        
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
     
 }
 

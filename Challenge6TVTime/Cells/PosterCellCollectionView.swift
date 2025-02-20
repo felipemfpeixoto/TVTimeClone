@@ -19,10 +19,7 @@ class PosterCellCollectionView: UICollectionViewCell {
     
     
     @IBAction func clickedButton(_ sender: Any) {
-        print("Clicou")
-        
         if TVShowsManager.shared.watchedTvShow.contains(where: { $0.id == self.tvShow!.id }) {
-            print("Deu red")
             TVShowsManager.shared.removeWatched(self.tvShow!)
             
             let configuration = UIImage.SymbolConfiguration(scale: .small)
@@ -30,7 +27,6 @@ class PosterCellCollectionView: UICollectionViewCell {
             self.addShowButton.setImage(UIImage(systemName: "plus", withConfiguration: configuration), for: .normal)
             
         } else {
-            print("Deu add")
             TVShowsManager.shared.addWatched(self.tvShow!)
             let configuration = UIImage.SymbolConfiguration(scale: .small)
             self.addShowButton.setImage(UIImage(systemName: "minus", withConfiguration: configuration), for: .normal)
@@ -59,6 +55,14 @@ class PosterCellCollectionView: UICollectionViewCell {
         
         self.addPosterImage.contentMode = .scaleAspectFill
         self.layer.cornerRadius = 8
+        
+        do {
+            let _ = try TVShowsManager.load()
+            self.addShowButton.isEnabled = false
+            self.addShowButton.layer.opacity = 0
+        } catch {
+            print("Não existe nenhum TVShowsManager salvo na memória, logo o botao continua ativo")
+        }
     }
     
     // MARK: Function called to register the cell to the collection view
